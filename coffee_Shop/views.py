@@ -129,7 +129,7 @@ def order(request):
     items = MenuItem.objects.filter(id__in=order_ids)
     
     if not items.exists():
-         #Optionally, add a message or handle empty order
+         
          pass
     
     return render(request, 'order.html', {'items': items})
