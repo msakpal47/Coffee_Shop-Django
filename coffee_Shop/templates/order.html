@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2 class="mb-3">🛒 Your Order</h2>
+
+  <table style="border: 1px solid black; border-collapse: collapse; width: 100%;">
+    <tr>
+        <th style="border: 1px solid black;">Image</th>
+        <th style="border: 1px solid black;">Items</th>
+        <th style="border: 1px solid black;">Price</th>
+        <th style="border: 1px solid black;">Quantity</th>
+        <th style="border: 1px solid black;">Total</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for item in items %}
+      <tr>
+          <th style="border: 1px solid black;"><img src="{{ item.item_image.url }}" width="60" height="60" class="me-3 rounded" alt="{{ item.name }}"></th>
+          <th style="border: 1px solid black;">{{ item.item }}</th>
+          <th style="border: 1px solid black;">{{ item.price }}</th>
+          <th style="border: 1px solid black;">{{ item.quantity }}</th>
+          <th style="border: 1px solid black;">₹{{ item.subtotal }}</th>
+          <td>
+            <a href="{% url 'coffee_Shop:delete_item' item.item.id %}">➖</a>
+            <a href="{% url 'coffee_Shop:remove_item' item.item.id %}">🗑️</a>
+        </td>
+      </tr>
+    {% endfor %}
+
+  </table>
+     
+    <h2>{{ total }}</h2>
+
+    <div class="mt-3">
+      <a href="{% url 'coffee_Shop:menu' %}" class="btn btn-secondary">← Back to Menu</a>
+      <!-- You can add a "Place Order" button here if you want -->
+    </div>
+  
+    
+    {% if not items %}
+      <div class="alert alert-warning">
+        No items in your order. Please add some from the <a href="{% url 'coffee_Shop:menu' %}">Menu</a>.
+      </div>
+    {% endif %}
+
+</div>
+{% endblock %}

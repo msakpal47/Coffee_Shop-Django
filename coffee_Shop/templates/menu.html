@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2 class="mb-3">☕ Menu</h2>
+
+  {% if items %}
+    <ul class="list-group">
+      {% for item in items %}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center">
+            {% if item.image %}
+              <img src="{{ item.image.url }}" width="60" height="60" class="me-3 rounded" alt="{{ item.name }}">
+            {% endif %}
+            <div>
+              <strong>{{ item.name }}</strong> - ₹{{ item.price }}<br>
+              <small class="text-muted">{{ item.description|default:"No description." }}</small>
+            </div>
+          </div>
+          <form method="post" action="{% url 'coffee_Shop:add_to_order' item.id %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-outline-primary btn-sm">➕ Add</button>
+          </form>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <div class="alert alert-warning mt-4">
+      No menu items available. Please <a href="{% url 'coffee_Shop:add_menu_item' %}">add items</a>.
+    </div>
+  {% endif %}
+
+  <!-- Action Buttons -->
+  <div class="mt-4 d-flex justify-content-between">
+    <a href="{% url 'coffee_Shop:home' %}" class="btn btn-secondary">← Back</a>
+    <a href="{% url 'coffee_Shop:order' %}" class="btn btn-success">✔ Confirm & Order</a>
+  </div>
+</div>
+{% endblock %}
