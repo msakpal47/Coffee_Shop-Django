@@ -1,7 +1,7 @@
 # Coffee_Shop-Django
 
 
-![Uploading image.png…]()
+![Project Screenshot](https://res.cloudinary.com/dstfexaal/image/upload/v1747397026/ss_web_auntoh.png)
 
 
 
