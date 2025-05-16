@@ -1,6 +1,10 @@
 # Coffee_Shop-Django
 
 
+![Uploading image.png…]()
+
+
+
 Here's how to create a Django project using the command line: 
 Open your terminal or command prompt.
 Navigate to the directory: where you want to create your project. For example:
