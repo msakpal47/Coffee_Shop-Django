@@ -1,5 +1,49 @@
 {% extends 'base.html' %}
 {% block content %}
-<h2>Home Page</h2>
-<p>Welcome to our coffee shop!</p>
+
+ <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #0b0c2a;
+        }
+       
+        .hero {
+            display: flex;
+            height: 90vh;
+        }
+        .hero-text {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 100px;
+            color: white;
+        }
+        .hero-text h1 {
+            font-size: 60px;
+            margin: 0;
+        }
+        .hero-text p {
+            max-width: 400px;
+            margin-top: 20px;
+            font-size: 16px;
+            color: #c7c7c7;
+        }
+        
+    </style>
+
+<!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-text">
+            <h1>GANESHA COFFEE</h1>
+            <h2>Spread Happiness</h2>
+            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.</p>
+        </div>
+        <div class="hero-image">
+            {% comment %} <img src="" alt="Ganesha Coffee Cup"> {% endcomment %}
+        </div>
+    </div>
+
+
 {% endblock %}
