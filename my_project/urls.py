@@ -24,5 +24,6 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('coffee_Shop/', include('coffee_Shop.urls'))
+    path('coffee_Shop/', include('coffee_Shop.urls')),
+    path('coffee_login/', include('coffee_user_login.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

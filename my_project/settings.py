@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-&y822ppkup$d)4a0&-n@r@xk3@ni^$8qn787bu08h-!mcb=951
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'coffee_Shop',
+    'coffee_user_login',
 ]
 
 MIDDLEWARE = [

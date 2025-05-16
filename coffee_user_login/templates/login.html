@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+
+
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Login | Coffee Shop</title>
+        
+    </head>
+{% block content %}
+    <style>
+            body {
+                
+            }
+            .login-container {
+                background: #fff;
+                padding: 40px 30px;
+                border-radius: 12px;
+                box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+                width: 100%;
+                max-width: 380px;
+                animation: slideIn 0.6s ease-out;
+            }
+            @keyframes slideIn {
+                from { transform: translateY(-50px); opacity: 0; }
+                to { transform: translateY(0); opacity: 1; }
+            }
+            .login-container h2 {
+                margin-bottom: 25px;
+                color: #333;
+                text-align: center;
+            }
+            .input-group {
+                margin-bottom: 20px;
+                position: relative;
+            }
+            .input-group label {
+                display: block;
+                font-weight: 600;
+                margin-bottom: 8px;
+                color: #444;
+            }
+            .input-group input {
+                width: 85%;
+                padding: 10px 14px;
+                border-radius: 8px;
+                border: 1px solid #ccc;
+                font-size: 14px;
+                transition: border-color 0.3s;
+            }
+            .input-group input:focus {
+                border-color: #614385;
+                outline: none;
+            }
+            .toggle-password {
+                position: absolute;
+                top: 36px;
+                right: 30px;
+                cursor: pointer;
+                font-size: 18px;
+                color: #614385;
+                user-select: none;
+            }
+            .btn {
+                background: #614385;
+                color: white;
+                border: none;
+                padding: 12px;
+                width: 95%;
+                border-radius: 8px;
+                font-size: 15px;
+                cursor: pointer;
+                transition: background 0.3s;
+            }
+            .btn:hover {
+                background: #3f2c68;
+            }
+            .register-link {
+                margin-top: 18px;
+                display: block;
+                text-align: center;
+                font-size: 14px;
+                color: #333;
+                text-decoration: none;
+            }
+            .register-link:hover {
+                text-decoration: underline;
+            }
+            .error-message {
+                color: red;
+                font-size: 14px;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+        </style>
+    <body>
+        <div class="login-container">
+            <h2>Login to Coffee Shop</h2>
+
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="error-message">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+
+            <form method="post">
+                {% csrf_token %}
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                    <span class="toggle-password" onclick="togglePassword()">👁️</span>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+
+            <a class="register-link" href="{% url 'coffee_user_login:register' %}">Don't have an account? Register here</a>
+        </div>
+
+        <script>
+            function togglePassword() {
+                const passwordField = document.getElementById('password');
+                const toggleIcon = document.querySelector('.toggle-password');
+                if (passwordField.type === 'password') {
+                    passwordField.type = 'text';
+                    toggleIcon.textContent = '🙈';
+                } else {
+                    passwordField.type = 'password';
+                    toggleIcon.textContent = '👁️';
+                }
+            }
+        </script>
+    </body>
+    </html>
+
+{% endblock %}
