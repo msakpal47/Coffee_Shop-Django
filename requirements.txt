@@ -1,0 +1,8 @@
+yarl==1.22.0
+django-cors-headers>=4.3.1
+Django==5.2.8
+gunicorn>=21.2.0
+whitenoise>=6.7.0
+dj-database-url>=2.2.0
+psycopg2-binary>=2.9.9
+Pillow>=10.4.0

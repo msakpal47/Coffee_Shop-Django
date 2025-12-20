@@ -1,0 +1,45 @@
+:root{--bg:#0e2451;--accent:#f4a000;--light:#ffffff;--dark:#0a1a3a}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,Segoe UI,Arial;background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url('../Backimage/back.jpg') center/cover fixed;color:#eee}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;background:linear-gradient(90deg,var(--bg),var(--dark));color:#fff;position:sticky;top:0;z-index:100;box-shadow:0 6px 16px rgba(0,0,0,.35)}
+.nav .brand{font-weight:800;letter-spacing:.6px;color:var(--accent);font-size:22px;display:flex;align-items:center;gap:10px}
+.logo{height:36px;width:auto;border-radius:6px;box-shadow:0 2px 6px rgba(0,0,0,.35)}
+.nav .links{display:flex;gap:22px}
+.nav .links a{color:#fff;text-decoration:none;font-weight:600;padding:8px 12px;border-radius:8px;transition:all .2s ease}
+.nav .links a:hover{background:rgba(255,255,255,.12);color:#fff;transform:translateY(-1px)}
+.nav .contact{display:flex;gap:16px;font-size:.9rem}
+.hero{min-height:70vh;background-image:url('../Backimage/back.jpg');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;position:relative}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.6) 0%,rgba(0,0,0,.35) 45%,rgba(0,0,0,.1) 100%)}
+.hero-content{position:relative;color:#fff;text-align:left;max-width:900px;width:100%;padding:60px 40px}
+.hero-content h1{font-size:68px;line-height:1.05;margin:0 0 10px;font-weight:800;letter-spacing:.6px}
+.subtitle{font-size:20px;font-weight:700;margin:0 0 16px}
+.hero-content p{max-width:520px;font-size:16px;opacity:.95}
+.cta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:20px;max-width:720px}
+.cta-card{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:12px;padding:16px;text-decoration:none;color:#fff;transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
+.cta-card:hover{transform:translateY(-4px);box-shadow:0 10px 22px rgba(0,0,0,.35);background:rgba(255,255,255,.16)}
+.cta-title{font-size:20px;font-weight:800;color:var(--accent)}
+.cta-sub{font-size:14px;opacity:.9}
+.page{padding:28px;max-width:1200px;margin:0 auto;color:#fff;min-height: 80vh}
+.title{color:var(--accent);margin:0 0 18px;font-size:32px;letter-spacing:.3px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.card{background:rgba(255,255,255,.08);padding:14px;border-radius:14px;border:1px solid rgba(255,255,255,.15);transition:transform .18s ease,box-shadow .18s ease}
+.card:hover{transform:translateY(-4px);box-shadow:0 10px 22px rgba(0,0,0,.35)}
+.card img{width:100%;height:180px;object-fit:cover;border-radius:10px}
+.name{font-weight:800;margin-top:12px;font-size:1.2rem}
+.desc{font-size:.9rem;opacity:.8;margin-top:4px}
+.price{margin-top:8px;font-weight:bold;color:var(--accent)}
+.btn{background:var(--accent);color:#000;border:none;padding:12px 22px;border-radius:12px;margin-top:12px;cursor:pointer;font-weight:700;font-size:1rem;box-shadow:0 6px 14px rgba(244,160,0,.35);transition:transform .15s ease,box-shadow .15s ease,filter .15s ease}
+.btn:hover{filter:brightness(1.06);transform:translateY(-2px);box-shadow:0 10px 20px rgba(244,160,0,.45)}
+.btn:active{transform:translateY(0)}
+.success{background:#1fbf75;color:#fff;box-shadow:0 6px 14px rgba(31,191,117,.35)}
+.table{width:100%;border-collapse:collapse;background:rgba(255,255,255,.06);color:#fff;margin-bottom:20px;border-radius:10px;overflow:hidden}
+.table th{background:rgba(255,255,255,.12);text-align:left;font-weight:800}
+.table th,.table td{border:1px solid rgba(255,255,255,.1);padding:14px;font-size:.98rem}
+.thumb{width:64px;height:64px;object-fit:cover;border-radius:8px}
+.icon{padding:8px 12px;margin:0 6px;background:#e74c3c;color:white;border:none;border-radius:8px;cursor:pointer;font-weight:700;transition:transform .15s ease,filter .15s ease}
+.icon:hover{background:#c0392b;transform:scale(1.04)}
+.total{margin:14px 0;font-size:26px;font-weight:800;color:var(--accent)}
+.form{display:grid;gap:12px;max-width:500px}
+.link{color:var(--accent);text-decoration:none;font-weight:700;display:flex;align-items:center;gap:6px;transition:color .15s ease,transform .15s ease}
+.link:hover{color:#ffbf2e;transform:translateY(-1px)}
+.customer-form input {background:#1b1f2e;border:1px solid #2e344f;color:white;border-radius:8px;padding:10px}

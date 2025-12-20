@@ -27,4 +27,11 @@ urlpatterns = [
     #path('add_to_order/<int:item_id>/', views.add_to_order, name='add_to_order'),
     #path('remove-item/<int:item_id>/', views.remove_item, name='remove_item'),
     #path('delete-item/<int:item_id>/', views.delete_item, name='delete_item')
+    path('api/menu/', views.menu_api, name='menu_api'),
+    path('api/menu/add_to_order/<int:item_id>/', views.add_to_order_api, name='add_to_order_api'),
+    path('api/order/', views.order_api, name='order_api'),
+    path('api/order/delete/<int:item_id>/', views.delete_item_api, name='delete_item_api'),
+    path('api/order/remove/<int:item_id>/', views.remove_item_api, name='remove_item_api'),
+    path('api/order/confirm/', views.confirm_order_api, name='confirm_order_api'),
+    path('api/orders/history/', views.order_history_api, name='order_history_api'),
 ]
